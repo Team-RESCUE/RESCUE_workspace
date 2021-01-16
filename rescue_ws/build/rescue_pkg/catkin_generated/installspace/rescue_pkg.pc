@@ -2,7 +2,7 @@ prefix=/home/rhughes98/rescue_ws/install
 
 Name: rescue_pkg
 Description: Description of rescue_pkg
-Version: 0.0.0
-Cflags: 
+Version: 0.0.1
+Cflags: -I${prefix}/include
 Libs: -L${prefix}/lib 
-Requires: 
+Requires: message_runtime

@@ -3,7 +3,8 @@
 
 #include <sstream>
 
-int main(int argc, char **argv) {
+int main (int argc, char **argv)
+{
 
 	// initialize ROS and specify node name
 	ros::init(argc, argv, "test_talker");
@@ -12,7 +13,7 @@ int main(int argc, char **argv) {
 	ros::NodeHandle n;
 
 	// specify message type (string) and size of publishing queue (1000 messages)
-	ros::Publisher talker_pub = n.advertise<std_msgs::String>("chatter", 1000);
+	ros::Publisher chatter_pub = n.advertise<std_msgs::String>("chatter", 1000);
 
 	// set loop rate to 10Hz
 	ros::Rate loop_rate(10);
@@ -39,6 +40,7 @@ int main(int argc, char **argv) {
 
 		// sleep for time remaining to meet loop_rate
 		loop_rate.sleep();
+		++count;
 	}
 
 }
