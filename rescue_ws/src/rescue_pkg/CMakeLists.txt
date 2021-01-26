@@ -40,3 +40,11 @@ add_dependencies(test_talker rescue_pkg_generate_messages_cpp)
 add_executable(test_listener src/test_listener.cpp)
 target_link_libraries(test_listener ${catkin_LIBRARIES})
 add_dependencies(test_listener rescue_pkg_generate_messages_cpp)
+
+add_executable(ros_master src/ros_master.cpp)
+target_link_libraries(ros_master ${catkin_LIBRARIES})
+add_dependencies(ros_master rescue_pkg_generate_messages_cpp)
+
+add_executable(marble_dummy src/marble_dummy.cpp)
+target_link_libraries(marble_dummy ${catkin_LIBRARIES})
+add_dependencies(marble_dummy rescue_pkg_generate_messages_cpp)
