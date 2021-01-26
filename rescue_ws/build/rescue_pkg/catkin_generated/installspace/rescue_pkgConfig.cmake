@@ -67,14 +67,14 @@ set(rescue_pkg_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(rescue_pkg_SOURCE_PREFIX /home/rhughes98/rescue_ws/src/rescue_pkg)
-  set(rescue_pkg_DEVEL_PREFIX /home/rhughes98/rescue_ws/devel)
+  set(rescue_pkg_SOURCE_PREFIX /home/rhughes98/RESCUE_workspace/rescue_ws/src/rescue_pkg)
+  set(rescue_pkg_DEVEL_PREFIX /home/rhughes98/RESCUE_workspace/rescue_ws/devel)
   set(rescue_pkg_INSTALL_PREFIX "")
   set(rescue_pkg_PREFIX ${rescue_pkg_DEVEL_PREFIX})
 else()
   set(rescue_pkg_SOURCE_PREFIX "")
   set(rescue_pkg_DEVEL_PREFIX "")
-  set(rescue_pkg_INSTALL_PREFIX /home/rhughes98/rescue_ws/install)
+  set(rescue_pkg_INSTALL_PREFIX /home/rhughes98/RESCUE_workspace/rescue_ws/install)
   set(rescue_pkg_PREFIX ${rescue_pkg_INSTALL_PREFIX})
 endif()
 
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/rhughes98/rescue_ws/install/lib;/home/rhughes98/rescue_ws/devel/lib;/opt/ros/melodic/lib)
+    foreach(path /home/rhughes98/RESCUE_workspace/rescue_ws/install/lib;/home/rhughes98/RESCUE_workspace/rescue_ws/devel/lib;/home/rhughes98/rescue_ws/devel/lib;/opt/ros/melodic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

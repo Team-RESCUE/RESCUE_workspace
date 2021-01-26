@@ -1,4 +1,4 @@
-prefix=/home/rhughes98/rescue_ws/install
+prefix=/home/rhughes98/RESCUE_workspace/rescue_ws/install
 
 Name: rescue_pkg
 Description: Description of rescue_pkg

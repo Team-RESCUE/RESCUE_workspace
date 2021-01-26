@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/rescue_pkg_generate_messages_cpp"
-  "/home/rhughes98/rescue_ws/devel/include/rescue_pkg/Num.h"
-  "/home/rhughes98/rescue_ws/devel/include/rescue_pkg/AddTwoInts.h"
+  "/home/rhughes98/RESCUE_workspace/rescue_ws/devel/include/rescue_pkg/Num.h"
+  "/home/rhughes98/RESCUE_workspace/rescue_ws/devel/include/rescue_pkg/AddTwoInts.h"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -6,11 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/rhughes98/rescue_ws/src/rescue_pkg/src/test_talker.cpp
+/home/rhughes98/RESCUE_workspace/rescue_ws/src/rescue_pkg/src/test_talker.cpp
 ros/ros.h
-/home/rhughes98/rescue_ws/src/rescue_pkg/src/ros/ros.h
+/home/rhughes98/RESCUE_workspace/rescue_ws/src/rescue_pkg/src/ros/ros.h
 std_msgs/String.h
-/home/rhughes98/rescue_ws/src/rescue_pkg/src/std_msgs/String.h
+/home/rhughes98/RESCUE_workspace/rescue_ws/src/rescue_pkg/src/std_msgs/String.h
 sstream
 -
 
