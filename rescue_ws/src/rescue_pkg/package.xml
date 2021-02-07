@@ -9,8 +9,9 @@ This package provides communication and control capability to the RESCUE system 
   <!-- One maintainer tag required, multiple allowed, one person per tag -->
   <!-- Example:  -->
   <!-- <maintainer email="jane.doe@example.com">Jane Doe</maintainer> -->
-  <!-- RESCUE team - if you're reading this, add yourself as a maintainer! -->
   <maintainer email="ryhu5281@colorado.edu">Ryan Hughes</maintainer>
+
+  <!-- RESCUE team - if you're reading this, add yourself as a maintainer! -->
 
 
   <!-- One license tag required, multiple allowed, one license per tag -->
