@@ -7,5 +7,5 @@
 # new environment variables
 
 # modified environment variables
-export PWD='/home/rhughes98/RESCUE_workspace/rescue_ws/build'
-export ROS_PACKAGE_PATH='/home/rhughes98/rescue_ws/src:/home/rhughes98/RESCUE_workspace/rescue_ws/src:/home/rhughes98/rescue_ws/src:/opt/ros/melodic/share'
+export PWD='/home/ryan/rescue_ws/build'
+export PYTHONPATH="/home/ryan/rescue_ws/devel/lib/python3/dist-packages:$PYTHONPATH"

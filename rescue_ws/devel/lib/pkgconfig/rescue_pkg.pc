@@ -1,8 +1,0 @@
-prefix=/home/rhughes98/RESCUE_workspace/rescue_ws/devel
-
-Name: rescue_pkg
-Description: Description of rescue_pkg
-Version: 0.0.1
-Cflags: -I/home/rhughes98/RESCUE_workspace/rescue_ws/devel/include
-Libs: -L${prefix}/lib 
-Requires: message_runtime

@@ -1,2 +1,2 @@
-rescue_pkg
--DCATKIN_DEVEL_PREFIX=/home/rhughes98/RESCUE_workspace/rescue_ws/devel -DCMAKE_INSTALL_PREFIX=/home/rhughes98/RESCUE_workspace/rescue_ws/install -G Unix Makefiles
+rescue_pkg_noetic
+-DCATKIN_DEVEL_PREFIX=/home/ryan/rescue_ws/devel -DCMAKE_INSTALL_PREFIX=/home/ryan/rescue_ws/install -G Unix Makefiles
