@@ -1,8 +1,8 @@
-prefix=/home/ryan/rescue_ws/devel
+prefix=/home/ryan/RESCUE_workspace/rescue_ws/devel
 
 Name: rescue_pkg_noetic
 Description: Description of rescue_pkg_noetic
 Version: 0.0.0
-Cflags: -I/home/ryan/rescue_ws/devel/include
+Cflags: -I/home/ryan/RESCUE_workspace/rescue_ws/devel/include
 Libs: -L${prefix}/lib 
 Requires: message_runtime

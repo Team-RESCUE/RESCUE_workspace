@@ -42,7 +42,7 @@ int main (int argc, char **argv)
 		// temporarily set to "false"
 		// TODO: figure out why "true" gives seg fault
 		// 		 also, why doesn't this topic show on rqt_graph
-		co2_flag_msg.data = false;
+		co2_flag_msg.data = true;
 
 		ROS_INFO("CO2 flag: %s", co2_flag_msg.data);
 		co2_pub.publish(co2_flag_msg);
