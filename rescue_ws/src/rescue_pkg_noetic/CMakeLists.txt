@@ -48,3 +48,7 @@ add_dependencies(ros_master rescue_pkg_noetic_generate_messages_cpp)
 add_executable(marble_dummy src/marble_dummy.cpp)
 target_link_libraries(marble_dummy ${catkin_LIBRARIES})
 add_dependencies(marble_dummy rescue_pkg_noetic_generate_messages_cpp)
+
+add_executable(pan_tilt_servos src/pan_tilt_servos.cpp)
+target_link_libraries(pan_tilt_servos ${catkin_LIBRARIES})
+add_dependencies(pan_tilt_servos rescue_pkg_noetic_generate_messages_cpp)

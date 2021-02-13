@@ -11,12 +11,16 @@ int main (int argc, char **argv)
 
 	ros::NodeHandle n;
 
+	int status_count = 0; // # of status messages sent
+
 	// system status (ping to MARBLE)
 	ros::Publisher status_pub = n.advertise<std_msgs::String>("status_ping_rescue",1000);
-	int status_count = 0; // # of status messages sent
 
 	// CO2 flag (ping to MARBLE)
 	ros::Publisher co2_pub = n.advertise<std_msgs::Bool>("co2_flag",1000);
+
+	// pan/tilt commands to end effector
+	ros::Publisher pan_tilt_pub = n.advertise<std_msgs::String>("pan_tilt_command",1000);
 
 	ros::Rate loop_rate(10);
 
@@ -46,6 +50,17 @@ int main (int argc, char **argv)
 
 		ROS_INFO("CO2 flag: %s", co2_flag_msg.data);
 		co2_pub.publish(co2_flag_msg);
+		// ====================================================
+
+
+		// ================= Pan/Tilt Commands ================
+		std_msgs::String pan_tilt_msg;
+
+		ss << "Pan/tilt command " << status_count << ": TILT IT"
+		pan_tilt_msg.data = ss.str();
+
+		ROS_INFO("Pan/tilt command: %s", pan_tilt_msg.data);
+
 		// ====================================================
 
 
