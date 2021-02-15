@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/ryan/rescue_ws/devel/share/common-lisp/ros/rescue_pkg_noetic/msg/Num.lisp"
-  "/home/ryan/rescue_ws/devel/share/common-lisp/ros/rescue_pkg_noetic/srv/AddTwoInts.lisp"
+  "/home/ryan/RESCUE_workspace/rescue_ws/devel/share/common-lisp/ros/rescue_pkg_noetic/msg/Num.lisp"
+  "/home/ryan/RESCUE_workspace/rescue_ws/devel/share/common-lisp/ros/rescue_pkg_noetic/srv/AddTwoInts.lisp"
   "CMakeFiles/rescue_pkg_noetic_generate_messages_lisp"
 )
 

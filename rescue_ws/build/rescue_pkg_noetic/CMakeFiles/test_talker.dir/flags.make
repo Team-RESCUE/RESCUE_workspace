@@ -6,5 +6,5 @@ CXX_FLAGS =
 
 CXX_DEFINES = -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\"rescue_pkg_noetic\"
 
-CXX_INCLUDES = -I/home/ryan/rescue_ws/devel/include -I/home/ryan/rescue_ws/src/rescue_pkg_noetic/include -I/opt/ros/noetic/include -I/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp 
+CXX_INCLUDES = -I/home/ryan/RESCUE_workspace/rescue_ws/devel/include -I/home/ryan/RESCUE_workspace/rescue_ws/src/rescue_pkg_noetic/include -I/opt/ros/noetic/include -I/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp 
 

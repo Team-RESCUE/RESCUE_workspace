@@ -6,13 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/home/ryan/rescue_ws/src/rescue_pkg_noetic/src/ros_master.cpp
+/home/ryan/RESCUE_workspace/rescue_ws/src/rescue_pkg_noetic/src/ros_master.cpp
 ros/ros.h
-/home/ryan/rescue_ws/src/rescue_pkg_noetic/src/ros/ros.h
+/home/ryan/RESCUE_workspace/rescue_ws/src/rescue_pkg_noetic/src/ros/ros.h
 std_msgs/String.h
-/home/ryan/rescue_ws/src/rescue_pkg_noetic/src/std_msgs/String.h
+/home/ryan/RESCUE_workspace/rescue_ws/src/rescue_pkg_noetic/src/std_msgs/String.h
 std_msgs/Bool.h
-/home/ryan/rescue_ws/src/rescue_pkg_noetic/src/std_msgs/Bool.h
+/home/ryan/RESCUE_workspace/rescue_ws/src/rescue_pkg_noetic/src/std_msgs/Bool.h
 sstream
 -
 

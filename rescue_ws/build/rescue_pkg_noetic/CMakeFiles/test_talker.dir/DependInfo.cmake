@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/ryan/rescue_ws/src/rescue_pkg_noetic/src/test_talker.cpp" "/home/ryan/rescue_ws/build/rescue_pkg_noetic/CMakeFiles/test_talker.dir/src/test_talker.cpp.o"
+  "/home/ryan/RESCUE_workspace/rescue_ws/src/rescue_pkg_noetic/src/test_talker.cpp" "/home/ryan/RESCUE_workspace/rescue_ws/build/rescue_pkg_noetic/CMakeFiles/test_talker.dir/src/test_talker.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -17,8 +17,8 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "/home/ryan/rescue_ws/devel/include"
-  "/home/ryan/rescue_ws/src/rescue_pkg_noetic/include"
+  "/home/ryan/RESCUE_workspace/rescue_ws/devel/include"
+  "/home/ryan/RESCUE_workspace/rescue_ws/src/rescue_pkg_noetic/include"
   "/opt/ros/noetic/include"
   "/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
   )

@@ -8,4 +8,3 @@
 
 # modified environment variables
 export PWD='/home/ryan/RESCUE_workspace/rescue_ws/build'
-export ROS_PACKAGE_PATH='/home/ryan/rescue_ws/src:/home/ryan/RESCUE_workspace/rescue_ws/src:/home/ryan/rescue_ws/src:/opt/ros/noetic/share'
