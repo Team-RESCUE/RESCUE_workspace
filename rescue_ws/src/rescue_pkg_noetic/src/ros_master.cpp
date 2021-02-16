@@ -57,7 +57,7 @@ int main (int argc, char **argv)
 		// ================= Pan/Tilt Commands ================
 		std_msgs::String pan_tilt_msg;
 
-		ss << "Pan/tilt command " << status_count << ": TILT IT";
+		ss << "Pan/tilt command " << status_count << ": TILT ME BABY";
 		pan_tilt_msg.data = ss.str();
 
 		ROS_INFO("%s", pan_tilt_msg.data.c_str());
