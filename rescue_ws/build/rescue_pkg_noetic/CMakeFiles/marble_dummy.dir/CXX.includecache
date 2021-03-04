@@ -417,12 +417,6 @@ boost/utility/enable_if.hpp
 -
 boost/mpl/and.hpp
 -
-boost/mpl/or.hpp
--
-boost/mpl/not.hpp
--
-cstring
--
 
 /opt/ros/noetic/include/ros/serialized_message.h
 roscpp_serialization_macros.h
