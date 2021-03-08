@@ -1,6 +1,9 @@
 #include "ros/ros.h"
 #include "std_msgs/String.h"
 #include "std_msgs/Bool.h"
+#include "std_msgs/Header.h"
+#include "geometry_msgs/Point.h"
+#include "geometry_msgs/PointStamped.h"
 
 #include <sstream>
 
@@ -21,6 +24,9 @@ int main (int argc, char **argv)
 
 	// pan/tilt commands to end effector
 	ros::Publisher pan_tilt_pub = n.advertise<std_msgs::String>("pan_tilt_command",1000);
+
+	// target location
+	ros::Publisher target_location_pub = n.advertise<std_msgs::String>("target_location",1000);
 
 	ros::Rate loop_rate(10);
 
@@ -67,6 +73,28 @@ int main (int argc, char **argv)
 
 		// ====================================================
 
+		// ================= Location Commands ================
+
+		geometry_msgs::PointStamped target_point;
+
+		target_point.header.frame_id = "target_point";
+		target_point.header.stamp = ros::Time();
+
+		target_point.point.x = 1.3;
+		target_point.point.y = 0.8;
+		target_point.point.z = 0.5;
+
+		// placeholder string message
+		std::stringstream ss_tl;
+		std_msgs::String target_location_msg;
+
+		ss_tl << "Target location: \n x = " << target_point.point.x << "\n y = " << target_point.point.y << "\n z = " << target_point.point.z;
+		target_location_msg.data = ss_tl.str();
+
+		ROS_INFO("%s", target_location_msg.data.c_str());
+		target_location_pub.publish(target_location_msg);
+
+		// ====================================================
 
 		// this will be useful once ros_master is subscribed to topics from various other nodes
 		ros::spinOnce();

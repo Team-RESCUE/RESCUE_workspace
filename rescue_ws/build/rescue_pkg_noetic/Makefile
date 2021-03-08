@@ -483,6 +483,21 @@ rescue_pkg_noetic_genlisp/fast:
 .PHONY : rescue_pkg_noetic_genlisp/fast
 
 # Convenience name for target.
+rescue_pkg_noetic/CMakeFiles/ros_control.dir/rule:
+	cd /home/ryan/RESCUE_workspace/rescue_ws/build && $(MAKE) -f CMakeFiles/Makefile2 rescue_pkg_noetic/CMakeFiles/ros_control.dir/rule
+.PHONY : rescue_pkg_noetic/CMakeFiles/ros_control.dir/rule
+
+# Convenience name for target.
+ros_control: rescue_pkg_noetic/CMakeFiles/ros_control.dir/rule
+
+.PHONY : ros_control
+
+# fast build rule for target.
+ros_control/fast:
+	cd /home/ryan/RESCUE_workspace/rescue_ws/build && $(MAKE) -f rescue_pkg_noetic/CMakeFiles/ros_control.dir/build.make rescue_pkg_noetic/CMakeFiles/ros_control.dir/build
+.PHONY : ros_control/fast
+
+# Convenience name for target.
 rescue_pkg_noetic/CMakeFiles/roscpp_generate_messages_py.dir/rule:
 	cd /home/ryan/RESCUE_workspace/rescue_ws/build && $(MAKE) -f CMakeFiles/Makefile2 rescue_pkg_noetic/CMakeFiles/roscpp_generate_messages_py.dir/rule
 .PHONY : rescue_pkg_noetic/CMakeFiles/roscpp_generate_messages_py.dir/rule
@@ -716,6 +731,33 @@ src/pan_tilt_servos.cpp.s:
 	cd /home/ryan/RESCUE_workspace/rescue_ws/build && $(MAKE) -f rescue_pkg_noetic/CMakeFiles/pan_tilt_servos.dir/build.make rescue_pkg_noetic/CMakeFiles/pan_tilt_servos.dir/src/pan_tilt_servos.cpp.s
 .PHONY : src/pan_tilt_servos.cpp.s
 
+src/ros_control.o: src/ros_control.cpp.o
+
+.PHONY : src/ros_control.o
+
+# target to build an object file
+src/ros_control.cpp.o:
+	cd /home/ryan/RESCUE_workspace/rescue_ws/build && $(MAKE) -f rescue_pkg_noetic/CMakeFiles/ros_control.dir/build.make rescue_pkg_noetic/CMakeFiles/ros_control.dir/src/ros_control.cpp.o
+.PHONY : src/ros_control.cpp.o
+
+src/ros_control.i: src/ros_control.cpp.i
+
+.PHONY : src/ros_control.i
+
+# target to preprocess a source file
+src/ros_control.cpp.i:
+	cd /home/ryan/RESCUE_workspace/rescue_ws/build && $(MAKE) -f rescue_pkg_noetic/CMakeFiles/ros_control.dir/build.make rescue_pkg_noetic/CMakeFiles/ros_control.dir/src/ros_control.cpp.i
+.PHONY : src/ros_control.cpp.i
+
+src/ros_control.s: src/ros_control.cpp.s
+
+.PHONY : src/ros_control.s
+
+# target to generate assembly for a file
+src/ros_control.cpp.s:
+	cd /home/ryan/RESCUE_workspace/rescue_ws/build && $(MAKE) -f rescue_pkg_noetic/CMakeFiles/ros_control.dir/build.make rescue_pkg_noetic/CMakeFiles/ros_control.dir/src/ros_control.cpp.s
+.PHONY : src/ros_control.cpp.s
+
 src/ros_master.o: src/ros_master.cpp.o
 
 .PHONY : src/ros_master.o
@@ -830,6 +872,7 @@ help:
 	@echo "... std_msgs_generate_messages_py"
 	@echo "... marble_dummy"
 	@echo "... rescue_pkg_noetic_genlisp"
+	@echo "... ros_control"
 	@echo "... roscpp_generate_messages_py"
 	@echo "... rescue_pkg_noetic_gennodejs"
 	@echo "... rescue_pkg_noetic_gencpp"
@@ -849,6 +892,9 @@ help:
 	@echo "... src/pan_tilt_servos.o"
 	@echo "... src/pan_tilt_servos.i"
 	@echo "... src/pan_tilt_servos.s"
+	@echo "... src/ros_control.o"
+	@echo "... src/ros_control.i"
+	@echo "... src/ros_control.s"
 	@echo "... src/ros_master.o"
 	@echo "... src/ros_master.i"
 	@echo "... src/ros_master.s"

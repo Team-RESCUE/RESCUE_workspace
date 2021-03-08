@@ -558,6 +558,19 @@ rescue_pkg_noetic_genlisp/fast:
 .PHONY : rescue_pkg_noetic_genlisp/fast
 
 #=============================================================================
+# Target rules for targets named ros_control
+
+# Build rule for target.
+ros_control: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ros_control
+.PHONY : ros_control
+
+# fast build rule for target.
+ros_control/fast:
+	$(MAKE) -f rescue_pkg_noetic/CMakeFiles/ros_control.dir/build.make rescue_pkg_noetic/CMakeFiles/ros_control.dir/build
+.PHONY : ros_control/fast
+
+#=============================================================================
 # Target rules for targets named roscpp_generate_messages_py
 
 # Build rule for target.
@@ -756,6 +769,7 @@ help:
 	@echo "... std_msgs_generate_messages_py"
 	@echo "... marble_dummy"
 	@echo "... rescue_pkg_noetic_genlisp"
+	@echo "... ros_control"
 	@echo "... roscpp_generate_messages_py"
 	@echo "... rescue_pkg_noetic_gennodejs"
 	@echo "... rescue_pkg_noetic_gencpp"
