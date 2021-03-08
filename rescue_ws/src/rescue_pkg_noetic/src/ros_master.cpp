@@ -88,7 +88,10 @@ int main (int argc, char **argv)
 		std::stringstream ss_tl;
 		std_msgs::String target_location_msg;
 
-		ss_tl << "Target location: \n x = " << target_point.point.x << "\n y = " << target_point.point.y << "\n z = " << target_point.point.z;
+		ss_tl << 
+		"Target location: \n x = " << target_point.point.x << 
+		"\n y = " << target_point.point.y << 
+		"\n z = " << target_point.point.z;
 		target_location_msg.data = ss_tl.str();
 
 		ROS_INFO("%s", target_location_msg.data.c_str());
