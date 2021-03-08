@@ -32,19 +32,20 @@ int main (int argc, char **argv)
 
 	while (ros::ok()) {
 
-		std::stringstream ss;
+		std::stringstream ss_status;
 
 		// ================== System Status ===================
 		std_msgs::String status_msg;
 
-		ss << "Test status " << status_count << ": yes";
-		status_msg.data = ss.str();
+		ss_status << "Test status " << status_count << ": yes";
+		status_msg.data = ss_status.str();
 
 
 		// print & broadcast status
 		ROS_INFO("%s", status_msg.data.c_str());
 		status_pub.publish(status_msg);
 		// ====================================================
+
 
 
 		// ===================== CO2 Flag =====================
@@ -60,6 +61,7 @@ int main (int argc, char **argv)
 		// ====================================================
 
 
+
 		// ================= Pan/Tilt Commands ================
 		std::stringstream ss_pt;
 		std_msgs::String pan_tilt_msg;
@@ -72,6 +74,8 @@ int main (int argc, char **argv)
 		pan_tilt_pub.publish(pan_tilt_msg);
 
 		// ====================================================
+
+
 
 		// ================= Location Commands ================
 
@@ -99,7 +103,9 @@ int main (int argc, char **argv)
 
 		// ====================================================
 
-		// this will be useful once ros_master is subscribed to topics from various other nodes
+
+
+		// this will be useful once ros_master is subscribed to topics from other nodes
 		ros::spinOnce();
 
 		// sleep accordingly to meet loop_rate
