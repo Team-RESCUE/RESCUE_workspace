@@ -7,6 +7,7 @@ find_package(catkin REQUIRED COMPONENTS
    rospy
    std_msgs
    message_generation
+   geometry_msgs
 )
 
 ## Declare ROS messages and services
@@ -23,6 +24,7 @@ add_service_files(
 generate_messages(
    DEPENDENCIES
    std_msgs
+   geometry_msgs
 )
 
 ## Declare a catkin package

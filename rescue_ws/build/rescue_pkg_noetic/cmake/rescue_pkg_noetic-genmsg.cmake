@@ -2,7 +2,7 @@
 
 message(STATUS "rescue_pkg_noetic: 1 messages, 1 services")
 
-set(MSG_I_FLAGS "-Irescue_pkg_noetic:/home/ryan/RESCUE_workspace/rescue_ws/src/rescue_pkg_noetic/msg;-Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg")
+set(MSG_I_FLAGS "-Irescue_pkg_noetic:/home/ryan/RESCUE_workspace/rescue_ws/src/rescue_pkg_noetic/msg;-Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg;-Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg")
 
 # Find all generators
 find_package(gencpp REQUIRED)
@@ -248,6 +248,9 @@ endif()
 if(TARGET std_msgs_generate_messages_cpp)
   add_dependencies(rescue_pkg_noetic_generate_messages_cpp std_msgs_generate_messages_cpp)
 endif()
+if(TARGET geometry_msgs_generate_messages_cpp)
+  add_dependencies(rescue_pkg_noetic_generate_messages_cpp geometry_msgs_generate_messages_cpp)
+endif()
 
 if(geneus_INSTALL_DIR AND EXISTS ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/rescue_pkg_noetic)
   # install generated code
@@ -258,6 +261,9 @@ if(geneus_INSTALL_DIR AND EXISTS ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/re
 endif()
 if(TARGET std_msgs_generate_messages_eus)
   add_dependencies(rescue_pkg_noetic_generate_messages_eus std_msgs_generate_messages_eus)
+endif()
+if(TARGET geometry_msgs_generate_messages_eus)
+  add_dependencies(rescue_pkg_noetic_generate_messages_eus geometry_msgs_generate_messages_eus)
 endif()
 
 if(genlisp_INSTALL_DIR AND EXISTS ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/rescue_pkg_noetic)
@@ -270,6 +276,9 @@ endif()
 if(TARGET std_msgs_generate_messages_lisp)
   add_dependencies(rescue_pkg_noetic_generate_messages_lisp std_msgs_generate_messages_lisp)
 endif()
+if(TARGET geometry_msgs_generate_messages_lisp)
+  add_dependencies(rescue_pkg_noetic_generate_messages_lisp geometry_msgs_generate_messages_lisp)
+endif()
 
 if(gennodejs_INSTALL_DIR AND EXISTS ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/rescue_pkg_noetic)
   # install generated code
@@ -280,6 +289,9 @@ if(gennodejs_INSTALL_DIR AND EXISTS ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_D
 endif()
 if(TARGET std_msgs_generate_messages_nodejs)
   add_dependencies(rescue_pkg_noetic_generate_messages_nodejs std_msgs_generate_messages_nodejs)
+endif()
+if(TARGET geometry_msgs_generate_messages_nodejs)
+  add_dependencies(rescue_pkg_noetic_generate_messages_nodejs geometry_msgs_generate_messages_nodejs)
 endif()
 
 if(genpy_INSTALL_DIR AND EXISTS ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/rescue_pkg_noetic)
@@ -292,4 +304,7 @@ if(genpy_INSTALL_DIR AND EXISTS ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/resc
 endif()
 if(TARGET std_msgs_generate_messages_py)
   add_dependencies(rescue_pkg_noetic_generate_messages_py std_msgs_generate_messages_py)
+endif()
+if(TARGET geometry_msgs_generate_messages_py)
+  add_dependencies(rescue_pkg_noetic_generate_messages_py geometry_msgs_generate_messages_py)
 endif()
