@@ -67,7 +67,7 @@ int main (int argc, char **argv)
 		std::stringstream ss_pt;
 		std_msgs::String pan_tilt_msg;
 
-		ss_pt << "Pan/tilt command " << status_count << ": Pan 45 deg, Tilt -30 deg";
+		ss_pt << "Pan/tilt command " << status_count << ": Pan 26 deg, Tilt -30 deg";
 		pan_tilt_msg.data = ss_pt.str();
 
 
