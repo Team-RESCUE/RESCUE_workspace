@@ -7,6 +7,7 @@ find_package(catkin REQUIRED COMPONENTS
    rospy
    std_msgs
    message_generation
+   geometry_msgs
 )
 
 ## Declare ROS messages and services
@@ -23,6 +24,7 @@ add_service_files(
 generate_messages(
    DEPENDENCIES
    std_msgs
+   geometry_msgs
 )
 
 ## Declare a catkin package
@@ -52,3 +54,7 @@ add_dependencies(marble_dummy rescue_pkg_noetic_generate_messages_cpp)
 add_executable(pan_tilt_servos src/pan_tilt_servos.cpp)
 target_link_libraries(pan_tilt_servos ${catkin_LIBRARIES})
 add_dependencies(pan_tilt_servos rescue_pkg_noetic_generate_messages_cpp)
+
+add_executable(ros_control src/ros_control.cpp)
+target_link_libraries(ros_control ${catkin_LIBRARIES})
+add_dependencies(ros_control rescue_pkg_noetic_generate_messages_cpp)
