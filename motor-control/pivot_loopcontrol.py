@@ -37,3 +37,7 @@ while pw_diff > 20:
 
 # pi.set_servo_pulsewidth(13,target_pw)
 print(target_pw)
+
+# get final time
+time_f = time.perf_counter()
+print("\nTime elapsed: ",time_f-time_i," s")
