@@ -11,7 +11,8 @@ pi.set_mode(18,pigpio.OUTPUT)
 pin_out = 13 # not 18 for some reason
 
 # get initial time
-time_i = time.perf_counter()
+# time_i = time.perf_counter()
+tick_i = pi.get_current_tick()
 
 # set target duty cycle
 dc_range = pi.get_PWM_range(pin_out)
@@ -19,9 +20,13 @@ duty_cycle = .5
 
 pi.set_PWM_dutycycle(pin_out,dc_range*duty_cycle)
 
+
 # get final time
-time_f = time.perf_counter()
-print("\nTime elapsed: ",time_f-time_i," s")
+# time_f = time.perf_counter()
+tick_f = pi.get_current_tick()
+
+# print("\nTime elapsed: ",time_f-time_i," s")
+print("\nTime elapsed: ",pi.tickDiff(tick_i,tick_f)," ms")
 
 # 1-second delay
 time.sleep(1)
