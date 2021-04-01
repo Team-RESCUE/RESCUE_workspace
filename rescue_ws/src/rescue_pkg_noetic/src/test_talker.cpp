@@ -2,6 +2,9 @@
 #include "std_msgs/String.h"
 
 #include <sstream>
+#include <iostream>
+
+using namespace std;
 
 int main (int argc, char **argv)
 {
@@ -10,7 +13,7 @@ int main (int argc, char **argv)
 	ros::init(argc, argv, "test_talker");
 
 	// create handle to node
-	ros::NodeHandle n;
+	ros::NodeHandle n("~");
 
 	// specify message type (string) and size of publishing queue (1000 messages)
 	ros::Publisher chatter_pub = n.advertise<std_msgs::String>("chatter", 1000);
@@ -24,6 +27,19 @@ int main (int argc, char **argv)
 	while (ros::ok()) {
 
 		std_msgs::String msg; // message object
+		std::string msg_param; // input parameter
+
+		// if(n.getParam("msgstr",msg_param)){
+		// 	ROS_INFO("Parameter received: %s", msg_param.c_str());
+		// 	msg.data = msg_param.c_str();
+		// } 
+		// else { // no parameters given
+		// 	cout << "No parameter received or parameter invalid \n" << endl;
+
+		// 	std::stringstream ss;
+		// 	ss << "hello there" << count;
+		// 	msg.data = ss.str();
+		// }
 
 		std::stringstream ss;
 		ss << "hello there" << count;

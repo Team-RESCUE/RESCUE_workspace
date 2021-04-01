@@ -22,4 +22,6 @@ int main(int argc, char **argv) {
 	// enter a loop, calling message callbacks as fast as possible
 	// exits once ros::ok() returns false
 	ros::spin();
+
+	return 0;
 }
