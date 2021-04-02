@@ -8,7 +8,7 @@ import sys
 
 # define output pin
 # pi = pigpio.pi()
-# pi.set_mode(13,pigpio.OUTPUT)
+# pi.set_mode(pin_out,pigpio.OUTPUT)
 
 
 # get initial time
@@ -29,7 +29,7 @@ print(this_pw)
 while pw_diff > 20:
 
 	# pi.set_servo_pulsewidth(pin_out,this_pw + pw_diff/2)
-	# this_pw = pi.get_servo_pulsewidth(13)
+	# this_pw = pi.get_servo_pulsewidth(pin_out)
 
 	this_pw = this_pw + pw_diff/2
 	print(this_pw)

@@ -6,9 +6,9 @@ import sys
 
 # define output pin
 pi = pigpio.pi()
-pi.set_mode(13,pigpio.OUTPUT)
-
 pin_out = 13
+pi.set_mode(pin_out,pigpio.OUTPUT)
+
 
 # get initial time
 # time_i = time.perf_counter()
