@@ -5,7 +5,7 @@ import time
 import numpy as np
 
 pi = pigpio.pi()
-pi.set_mode(18, pigpio.OUTPUT)
+pi.set_mode(13, pigpio.OUTPUT)
 
 # print ("mode: ", pi.get_mode(13))
 # print("setting to: ",pi.set_servo_pulsewidth(13, 1500))

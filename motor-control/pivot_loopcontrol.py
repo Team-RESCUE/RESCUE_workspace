@@ -8,7 +8,7 @@ import sys
 
 # define output pin
 # pi = pigpio.pi()
-# pi.set_mode(18,pigpio.OUTPUT)
+# pi.set_mode(13,pigpio.OUTPUT)
 
 
 # get initial time
