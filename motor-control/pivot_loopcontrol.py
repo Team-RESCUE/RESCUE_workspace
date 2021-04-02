@@ -8,6 +8,7 @@ import sys
 
 # define output pin
 # pi = pigpio.pi()
+# pin_out = 13
 # pi.set_mode(pin_out,pigpio.OUTPUT)
 
 
