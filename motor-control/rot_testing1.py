@@ -1,4 +1,3 @@
-
 import pigpio
 import time
 import numpy as np
@@ -9,16 +8,17 @@ pi = pigpio.pi()
 pin_out = 13
 pi.set_mode(pin_out,pigpio.OUTPUT)
 
-
 # get initial time
 # time_i = time.perf_counter()
 tick_i = pi.get_current_tick()
 
-# set target duty cycle
-dc_range = pi.get_PWM_range(pin_out)
-duty_cycle = .5
+# set target pulsewidth
+target_pw = int(sys.argv[1])
+this_pw = pi.get_servo_pulsewidth(pin_out)
+print("Current pulsewidth: ",this_pw)
 
-pi.set_PWM_dutycycle(pin_out,dc_range*duty_cycle)
+pi.set_servo_pulsewidth(pin_out,target_pw)
+print("Target pulsewidth: ",target_pw)
 
 
 # get final time
