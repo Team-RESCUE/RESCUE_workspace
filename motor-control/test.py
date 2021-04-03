@@ -4,5 +4,6 @@ starts = [1000, 1000]
 ends = [1100, 1350]
 
 diff = np.absolute(np.subtract(ends,starts))
+sum = np.add(ends,starts)
 
-print(diff)
+print(sum)
