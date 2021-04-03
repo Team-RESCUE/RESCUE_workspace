@@ -14,7 +14,7 @@ pi.set_mode(pins_out,pigpio.OUTPUT)
 tick_i = pi.get_current_tick()
 
 # get initial pulsewidths
-this_pws = [pi.get_servo_pulsewidth()]
+this_pws = [pi.get_servo_pulsewidth(pins_out)]
 
 # set target pulsewidths
 target_pws = [int(sys.argv[1]), int(sys.argv[2])]
@@ -22,7 +22,19 @@ target_pws = [int(sys.argv[1]), int(sys.argv[2])]
 # pi.set_servo_pulsewidth(pins_out,target_pws)
 
 # loop to target pulsewidths
-pw_diff = np.absolute(target_pws-this_pws) #check if this works as expected
+pw_diff = np.absolute(np.subtract(target_pws,this_pws)) 
+pw_close = (pw_diff < 20).astype(int)
+
+while np.sum(pw_close) < len(pw_close):
+    active = pw_close != 1 # only modify pulsewidth if not close to target
+    pi.set_servo_pulsewidth(pins_out[active], np.add(this_pws[active],target_pws[active])/2)
+    this_pws = [pi.get_servo_pulsewidth(pins_out)]
+    # this_pws = np.add(this_pws,pw_diff)/2
+    pw_diff = np.absolute(np.subtract(target_pws,this_pws))
+    pw_close = (pw_diff < 20).astype(int)
+
+# final iteration to target pulsewidth
+pi.set_servo_pulsewidth(pins_out,target_pws)
 
 # get final time
 tick_f = pi.get_current_tick()
