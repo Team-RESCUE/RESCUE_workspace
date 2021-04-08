@@ -9,9 +9,9 @@
 #include <iostream>
 #include <string>
 
-// void paramCallback(const std_msgs::String::ConstPtr& param_msg) {
-// 	ROS_INFO("Parameter received: [%s]", param_msg->data.c_str());
-// }
+void paramCallback(const std_msgs::String::ConstPtr& param_msg) {
+	ROS_INFO("Parameter received: [%s]", param_msg->data.c_str());
+}
 
 int main (int argc, char **argv)
 {
@@ -86,7 +86,7 @@ int main (int argc, char **argv)
 
 		// ================= Input Parameters =================
 
-		// ros::Subscriber param_sub = n.subscribe("param_test", 1000, paramCallback);
+		ros::Subscriber param_sub = n.subscribe("param_test", 1000, paramCallback);
 
 		// ====================================================
 

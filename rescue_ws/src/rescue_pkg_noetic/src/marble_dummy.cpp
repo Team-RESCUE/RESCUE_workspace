@@ -35,32 +35,36 @@ int main(int argc, char **argv) {
 	// subscribe to co2 flag topic
 	ros::Subscriber co2_sub = n.subscribe("co2_flag", 1000, co2Callback);
 
+	ros::Rate loop_rate(10);
 
-	// =================== Param message ===================
+	while (ros::ok()) {
+		// =================== Param message ===================
 
-	// ros::Publisher msg_pub = n.advertise<std_msgs::String>("location_command",1000);
+		ros::Publisher msg_pub = n.advertise<std_msgs::String>("location_command",1000);
 
-	// std::string param_msg;
-	// std_msgs::String msg;
+		// std::string param_msg;
+		std_msgs::String msg;
 
-	// if (n.getParam("param", param_msg)) {
-	// 	ROS_INFO("Parameter received: %s",param_msg.c_str());
-	// 	msg.data = msg_param.c_str()
-	// }
-
-
-	// std::stringstream ss_test;
-	// ss_test << "test message" << std::endl;
-	// msg.data = ss_test.str();
-
-	// ROS_INFO("Message out: %s",msg.data.c_str());
-
-	// msg_pub.publish(msg);
+		// if (n.getParam("param", param_msg)) {
+		// 	ROS_INFO("Parameter received: %s",param_msg.c_str());
+		// 	msg.data = msg_param.c_str()
+		// }
 
 
+		std::stringstream ss_test;
+		ss_test << "test message" << std::endl;
+		msg.data = ss_test.str();
 
-	// =====================================================
+		ROS_INFO("Message out: %s",msg.data.c_str());
 
-	ros::spin();
+		// msg_pub.publish(msg);
+
+
+
+		// =====================================================
+		ros::spinOnce();
+		loop_rate.sleep();
+	}
+	// ros::spin();
 
 }
