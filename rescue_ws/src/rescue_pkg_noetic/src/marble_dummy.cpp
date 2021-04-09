@@ -35,12 +35,12 @@ int main(int argc, char **argv) {
 	// subscribe to co2 flag topic
 	ros::Subscriber co2_sub = n.subscribe("co2_flag", 1000, co2Callback);
 
+	ros::Publisher msg_pub = n.advertise<std_msgs::String>("location_command",1000);
+
 	ros::Rate loop_rate(10);
 
 	while (ros::ok()) {
 		// =================== Param message ===================
-
-		ros::Publisher msg_pub = n.advertise<std_msgs::String>("location_command",1000);
 
 		// std::string param_msg;
 		std_msgs::String msg;
