@@ -7,6 +7,7 @@
 
 #include <sstream>
 #include <iostream>
+#include <string>
 
 void paramCallback(const std_msgs::String::ConstPtr& param_msg) {
 	ROS_INFO("Parameter received: [%s]", param_msg->data.c_str());
@@ -61,6 +62,7 @@ int main (int argc, char **argv)
 		// TODO: figure out why "true" gives seg fault
 		// 		 also, why doesn't this topic show on rqt_graph
 		co2_flag_msg.data = false;
+		std::string co2_str = std::to_string(co2_flag_msg.data);
 
 		ROS_INFO("CO2 flag: %c", co2_flag_msg.data);
 		co2_pub.publish(co2_flag_msg);

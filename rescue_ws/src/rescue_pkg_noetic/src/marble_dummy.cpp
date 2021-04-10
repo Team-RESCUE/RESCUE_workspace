@@ -4,6 +4,7 @@
 
 #include <sstream>
 #include <iostream>
+#include <string>
 
 // status message callback function
 void statusCallback(const std_msgs::String::ConstPtr& status_msg) {
@@ -13,7 +14,8 @@ void statusCallback(const std_msgs::String::ConstPtr& status_msg) {
 
 // co2 flag callback function
 void co2Callback(const std_msgs::Bool::ConstPtr& co2_flag_msg) {
-	ROS_INFO("CO2 FLAG RECEIVED: [%s]", co2_flag_msg->data);
+	std::string co2_str = std::to_string(co2_flag_msg->data);
+	ROS_INFO("CO2 FLAG RECEIVED: [%s]", co2_str);
 	// interpret co2 flag / act accordingly
 }
 
