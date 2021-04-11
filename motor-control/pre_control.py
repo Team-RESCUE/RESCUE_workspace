@@ -5,7 +5,7 @@ import sys
 
 # define output pins
 pi = pigpio.pi()
-pins_out = [13,12]
+pins_out = [13,12] # need some third pin for ext. control
 # pivot_pinout = 13
 # rot_pinout = 5
 pi.set_mode(pins_out,pigpio.OUTPUT)
@@ -17,7 +17,7 @@ tick_i = pi.get_current_tick()
 this_pws = [pi.get_servo_pulsewidth(pins_out)]
 
 # set target pulsewidths
-target_pws = [int(sys.argv[1]), int(sys.argv[2])]
+target_pws = [int(sys.argv[1]), int(sys.argv[2])] #, int(sys.argv[3])]
 
 # pi.set_servo_pulsewidth(pins_out,target_pws)
 
