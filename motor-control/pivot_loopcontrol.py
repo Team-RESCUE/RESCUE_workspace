@@ -30,7 +30,7 @@ direction = (this_pw-target_pw)/pw_diff
 print(this_pw)
 while pw_diff > 20:
 
-	pi.set_servo_pulsewidth(pin_out,this_pw + pw_diff/2)
+	pi.set_servo_pulsewidth(pin_out,this_pw + direction*pw_diff/2)
 	this_pw = pi.get_servo_pulsewidth(pin_out)
 
 	# this_pw = this_pw + pw_diff/2
