@@ -29,10 +29,12 @@ pw_close = np.where(pw_diff < 20, [1, 1], [0,0])
 while np.sum(pw_close) < len(pw_close):
     active = pw_close != 1 # only modify pulsewidth if not close to target
     # pi.set_servo_pulsewidth(pins_out[active], np.add(this_pws[active],target_pws[active])/2)
-    print(target_pws[active])
-    print(np.add(this_pws[active],target_pws[active])/2)
+    # print(target_pws[active])
+    # print(np.add(this_pws[active],target_pws[active])/2)
+    target_pws = np.where(pw_diff < 20, target_pws, np.add(this_pws[active],target_pws[active])/2)
+    print(target_pws)
     # this_pws = [pi.get_servo_pulsewidth(pins_out)]
-    this_pws = np.add(this_pws,pw_diff/2)
+    this_pws = np.add(this_pws,pw_diff)/2
     pw_diff = np.absolute(np.subtract(target_pws,this_pws))
     pw_close = (pw_diff < 20).astype(int)
 
