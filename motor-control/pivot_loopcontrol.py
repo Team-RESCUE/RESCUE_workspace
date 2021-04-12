@@ -25,6 +25,7 @@ this_pw = int(sys.argv[1])
 # (I'd call this process by its proper name if I knew it)
 
 pw_diff = np.absolute(this_pw-target_pw)
+direction = (this_pw-target_pw)/pw_diff
 
 print(this_pw)
 while pw_diff > 20:
