@@ -39,6 +39,8 @@ int main(int argc, char **argv) {
 
 	ros::Rate loop_rate(10);
 
+	// ros::spin();
+
 	while (ros::ok()) {
 		// =================== Param message ===================
 
