@@ -26,7 +26,7 @@ print("Target pulsewidth: ",target_pw)
 tick_f = pi.get_current_tick()
 
 # print("\nTime elapsed: ",time_f-time_i," s")
-print("\nTime elapsed: ",pi.tickDiff(tick_i,tick_f)," ms")
+print("\nTime elapsed: ",pigpio.tickDiff(tick_i,tick_f)," ms")
 
 # 1-second delay
 time.sleep(1)
