@@ -16,10 +16,10 @@ pi.set_mode(pin_out,pigpio.OUTPUT)
 time_i = time.perf_counter()
 
 # set target pulsewidth
-target_pw = int(sys.argv[1])
+target_pw = int(sys.argv[2])
 print("Target pulsewidth: ",target_pw)
-this_pw = pi.get_servo_pulsewidth(pin_out)
-this_pw = 1000
+# this_pw = pi.get_servo_pulsewidth(pin_out)
+this_pw = int(sys.argv[1])
 
 # loop to target pulsewidth, a little Zeno's paradox action
 # (I'd call this process by its proper name if I knew it)

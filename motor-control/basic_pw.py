@@ -14,8 +14,8 @@ tick_i = pi.get_current_tick()
 
 # set target pulsewidth
 target_pw = int(sys.argv[1])
-this_pw = pi.get_servo_pulsewidth(pin_out)
-print("Current pulsewidth: ",this_pw)
+# this_pw = pi.get_servo_pulsewidth(pin_out)
+# print("Current pulsewidth: ",this_pw)
 
 pi.set_servo_pulsewidth(pin_out,target_pw)
 print("Target pulsewidth: ",target_pw)
