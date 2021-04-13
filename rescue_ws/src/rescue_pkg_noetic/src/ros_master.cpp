@@ -35,6 +35,10 @@ int main (int argc, char **argv)
 	// ros::Publisher target_location_pub = n.advertise<std_msgs::String>("target_location",1000);
 	ros::Publisher target_location_pub = n.advertise<geometry_msgs::PointStamped>("target_location",1000);
 
+
+	// parameter message from MARBLE
+	ros::Subscriber param_sub = n.subscribe("location_command", 1000, paramCallback);
+
 	ros::Rate loop_rate(10);
 
 	while (ros::ok()) {
@@ -86,7 +90,7 @@ int main (int argc, char **argv)
 
 		// ================= Input Parameters =================
 
-		ros::Subscriber param_sub = n.subscribe("param_test", 1000, paramCallback);
+		// ros::Subscriber param_sub = n.subscribe("param_test", 1000, paramCallback);
 
 		// ====================================================
 

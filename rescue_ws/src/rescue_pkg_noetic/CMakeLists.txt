@@ -12,10 +12,14 @@ find_package(catkin REQUIRED COMPONENTS
 
 ## Declare ROS messages and services
 add_message_files(
+   DIRECTORY
+   msg
    FILES
    Num.msg
 )
 add_service_files(
+   DIRECTORY
+   srv
    FILES
    AddTwoInts.srv
 )

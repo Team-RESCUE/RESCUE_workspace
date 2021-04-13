@@ -5,6 +5,7 @@
 #include <sstream>
 #include <iostream>
 #include <string>
+#include <typeinfo>
 
 // status message callback function
 void statusCallback(const std_msgs::String::ConstPtr& status_msg) {
@@ -15,7 +16,9 @@ void statusCallback(const std_msgs::String::ConstPtr& status_msg) {
 // co2 flag callback function
 void co2Callback(const std_msgs::Bool::ConstPtr& co2_flag_msg) {
 	std::string co2_str = std::to_string(co2_flag_msg->data);
-	ROS_INFO("CO2 FLAG RECEIVED: [%s]", co2_str);
+	ROS_INFO("CO2 FLAG RECEIVED:");
+	const char* datatype = typeid(co2_flag_msg->data).name();
+	std::cout << co2_flag_msg->data << std::endl;
 	// interpret co2 flag / act accordingly
 }
 
@@ -24,7 +27,7 @@ int main(int argc, char **argv) {
 
 	ros::init(argc, argv, "marble_dummy");
 
-	ros::NodeHandle n("~");
+	ros::NodeHandle n;
 
 	// subscribe to status message topic
 	ros::Subscriber status_sub = n.subscribe("status_ping_rescue", 1000, statusCallback);
@@ -32,29 +35,38 @@ int main(int argc, char **argv) {
 	// subscribe to co2 flag topic
 	ros::Subscriber co2_sub = n.subscribe("co2_flag", 1000, co2Callback);
 
-	// =================== Param message ===================
-
 	ros::Publisher msg_pub = n.advertise<std_msgs::String>("location_command",1000);
 
-	// std::string param_msg;
-	std_msgs::String msg;
+	ros::Rate loop_rate(10);
 
-	// if (n.getParam("param", param_msg)) {
-	// 	ROS_INFO("Parameter received: %s",param_msg.c_str());
-	// 	msg.data = msg_param.c_str()
-	// }
+	// ros::spin();
 
-	std::stringstream ss_test;
-	ss_test << "test message" << std::endl;
-	msg.data = ss_test.str();
+	while (ros::ok()) {
+		// =================== Param message ===================
 
-	ROS_INFO("Message out: %s",msg.data.c_str());
+		// std::string param_msg;
+		std_msgs::String msg;
 
-	msg_pub.publish(msg);
-
+		// if (n.getParam("param", param_msg)) {
+		// 	ROS_INFO("Parameter received: %s",param_msg.c_str());
+		// 	msg.data = msg_param.c_str()
+		// }
 
 
-	// =====================================================
+		std::stringstream ss_test;
+		ss_test << "test message";
+		msg.data = ss_test.str();
 
-	ros::spin();
+		ROS_INFO("Message out: %s",msg.data.c_str());
+
+		msg_pub.publish(msg);
+
+
+
+		// =====================================================
+		ros::spinOnce();
+		loop_rate.sleep();
+	}
+	// ros::spin();
+
 }
