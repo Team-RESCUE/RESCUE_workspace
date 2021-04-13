@@ -54,12 +54,12 @@ int main(int argc, char **argv) {
 
 
 		std::stringstream ss_test;
-		ss_test << "test message" << std::endl;
+		ss_test << "test message";
 		msg.data = ss_test.str();
 
 		ROS_INFO("Message out: %s",msg.data.c_str());
 
-		// msg_pub.publish(msg);
+		msg_pub.publish(msg);
 
 
 
