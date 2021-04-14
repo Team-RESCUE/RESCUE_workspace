@@ -3,7 +3,7 @@ import time
 import numpy as np
 import sys
 
-define output pins
+# define output pins
 pi = pigpio.pi()
 pins_out = [13,12]
 # pivot_pinout = 13
@@ -44,7 +44,7 @@ print(target_pws)
 tick_f = pi.get_current_tick()
 
 # print statements
-print("Pivot pulsewidth changed to "target_pws[0])
+print("Pivot pulsewidth changed to ",target_pws[0])
 print("Rotation pulsewidth changed to ",target_pws[1])
 
 # 1-second delay
