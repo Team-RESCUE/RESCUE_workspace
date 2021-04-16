@@ -11,39 +11,39 @@
 
 // for python interfacing
 // #include "stdafx.h"
-#include <Python.h>
+// #include <Python.h>
 
 void paramCallback(const std_msgs::String::ConstPtr& param_msg) {
 	ROS_INFO("Parameter received: [%s]", param_msg->data.c_str());
 }
 
-void pythonCall(){
-	printf("Calling Python script:\n");
-	Py_Initialize();
-	PyObject *pName, *pModule, *pDict, *pFunc, *pArgs, *pValue;
-	pName = PyString_FromString("pytest"); //convert filename to string
-	pModule = PyImport_Import(pName); //import file as Python module
-	pDict = PyModule_GetDict(pModule); //dictionary for module contents
-	pFunc = PyDict_GetItemString(pDict,"print"); // get print method from dict
-	// define input args
-	pArgs = PyTuple_New(1);
-	pValue = PyInt_FromLong(5);
-	PyTuple_SetItem(pArgs,0,pValue);
-	// call function w/ args
-	PyObject *pResult = PyObject_CallObject(pFunc,pArgs);
+// void pythonCall(){
+// 	printf("Calling Python script:\n");
+// 	Py_Initialize();
+// 	PyObject *pName, *pModule, *pDict, *pFunc, *pArgs, *pValue;
+// 	pName = PyString_FromString("pytest"); //convert filename to string
+// 	pModule = PyImport_Import(pName); //import file as Python module
+// 	pDict = PyModule_GetDict(pModule); //dictionary for module contents
+// 	pFunc = PyDict_GetItemString(pDict,"print"); // get print method from dict
+// 	// define input args
+// 	pArgs = PyTuple_New(1);
+// 	pValue = PyInt_FromLong(5);
+// 	PyTuple_SetItem(pArgs,0,pValue);
+// 	// call function w/ args
+// 	PyObject *pResult = PyObject_CallObject(pFunc,pArgs);
 
-	// check if method failed
-	if (pResult == NULL)
-		printf("Calling the Python script failed\n");
+// 	// check if method failed
+// 	if (pResult == NULL)
+// 		printf("Calling the Python script failed\n");
 
-	// handle returned value from Python method
-	long result = PyInt_AsLong(pResult);
+// 	// handle returned value from Python method
+// 	long result = PyInt_AsLong(pResult);
 	
-	Py_Finalize();// destroy Python interpreter
+// 	Py_Finalize();// destroy Python interpreter
 	
-	// print result
-	printf("The Python method returned %d.\n",result); std::cin.ignore(); 
-}
+// 	// print result
+// 	printf("The Python method returned %d.\n",result); std::cin.ignore(); 
+// }
 
 int main (int argc, char **argv)
 {
@@ -67,6 +67,8 @@ int main (int argc, char **argv)
 	// ros::Publisher target_location_pub = n.advertise<std_msgs::String>("target_location",1000);
 	ros::Publisher target_location_pub = n.advertise<geometry_msgs::PointStamped>("target_location",1000);
 
+	// video data
+	ros::Publisher video_data_pub = n.advertise<std_msgs::String>("video_data",1000);
 
 	// parameter message from MARBLE
 	ros::Subscriber param_sub = n.subscribe("location_command", 1000, paramCallback);
@@ -89,7 +91,17 @@ int main (int argc, char **argv)
 		status_pub.publish(status_msg);
 		// ====================================================
 
+		// ===================== Video Data =====================
+		std_msgs::String video_data_msg;
 
+		std::stringstream ss_vid;
+		ss_vid << "Video placeholder";
+		video_data_msg.data = ss_vid.str();
+
+		ROS_INFO("%s", video_data_msg.data.c_str());
+		video_data_pub.publish(video_data_msg);
+		
+		// =====================================================
 
 		// ===================== CO2 Flag =====================
 		std_msgs::Bool co2_flag_msg;
