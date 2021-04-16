@@ -9,8 +9,40 @@
 #include <iostream>
 #include <string>
 
+// for python interfacing
+// #include "stdafx.h"
+#include <Python.h>
+
 void paramCallback(const std_msgs::String::ConstPtr& param_msg) {
 	ROS_INFO("Parameter received: [%s]", param_msg->data.c_str());
+}
+
+void pythonCall(){
+	printf("Calling Python script:\n");
+	Py_Initialize();
+	PyObject *pName, *pModule, *pDict, *pFunc, *pArgs, *pValue;
+	pName = PyString_FromString("pytest"); //convert filename to string
+	pModule = PyImport_Import(pName); //import file as Python module
+	pDict = PyModule_GetDict(pModule); //dictionary for module contents
+	pFunc = PyDict_GetItemString(pDict,"print"); // get print method from dict
+	// define input args
+	pArgs = PyTuple_New(1);
+	pValue = PyInt_FromLong(5);
+	PyTuple_SetItem(pArgs,0,pValue);
+	// call function w/ args
+	PyObject *pResult = PyObject_CallObject(pFunc,pArgs);
+
+	// check if method failed
+	if (pResult == NULL)
+		printf("Calling the Python script failed\n");
+
+	// handle returned value from Python method
+	long result = PyInt_AsLong(pResult);
+	
+	Py_Finalize();// destroy Python interpreter
+	
+	// print result
+	printf("The Python method returned %d.\n",result); std::cin.ignore(); 
 }
 
 int main (int argc, char **argv)
