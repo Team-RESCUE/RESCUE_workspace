@@ -33,7 +33,8 @@ generate_messages(
 
 ## Declare a catkin package
 catkin_package(
-   CATKIN_DEPENDS message_runtime
+   CATKIN_DEPENDS message_runtime roscpp
+   INCLUDE_DIRS include
 )
 
 ## Build talker and listener

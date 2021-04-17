@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(rescue_pkg_noetic_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT "/home/ryan/RESCUE_workspace/rescue_ws/devel/include " STREQUAL " ")
+if(NOT "/home/ryan/RESCUE_workspace/rescue_ws/devel/include;/home/ryan/RESCUE_workspace/rescue_ws/src/rescue_pkg_noetic/include " STREQUAL " ")
   set(rescue_pkg_noetic_INCLUDE_DIRS "")
-  set(_include_dirs "/home/ryan/RESCUE_workspace/rescue_ws/devel/include")
+  set(_include_dirs "/home/ryan/RESCUE_workspace/rescue_ws/devel/include;/home/ryan/RESCUE_workspace/rescue_ws/src/rescue_pkg_noetic/include")
   if(NOT " " STREQUAL " ")
     set(_report "Check the issue tracker '' and consider creating a ticket if the problem has not been reported yet.")
   elseif(NOT " " STREQUAL " ")
@@ -185,7 +185,7 @@ foreach(t ${rescue_pkg_noetic_EXPORTED_TARGETS})
   endif()
 endforeach()
 
-set(depends "message_runtime")
+set(depends "message_runtime;roscpp")
 foreach(depend ${depends})
   string(REPLACE " " ";" depend_list ${depend})
   # the package name of the dependency must be kept in a unique variable so that it is not overwritten in recursive calls

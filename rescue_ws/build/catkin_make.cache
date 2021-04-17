@@ -1,2 +1,2 @@
-rescue_pkg_noetic:ros_pololu_servo
+rescue_pkg_noetic
 -DCATKIN_DEVEL_PREFIX=/home/ryan/RESCUE_workspace/rescue_ws/devel -DCMAKE_INSTALL_PREFIX=/home/ryan/RESCUE_workspace/rescue_ws/install -G Unix Makefiles

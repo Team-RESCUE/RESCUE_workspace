@@ -11,7 +11,7 @@
 
 // for python interfacing
 // #include "stdafx.h"
-// #include <Python.h>
+#include <Python.h>
 
 void paramCallback(const std_msgs::String::ConstPtr& param_msg) {
 	ROS_INFO("Parameter received: [%s]", param_msg->data.c_str());
