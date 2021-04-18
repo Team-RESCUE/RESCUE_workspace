@@ -1,3 +1,8 @@
+// for python interfacing
+// #include "stdafx.h" //pre-compiled header file (only for VS code?)
+#include <Python.h>
+#include <stdlib.h>
+
 #include "ros/ros.h"
 #include "std_msgs/String.h"
 #include "std_msgs/Bool.h"
@@ -9,25 +14,47 @@
 #include <iostream>
 #include <string>
 
-// for python interfacing
-// #include "stdafx.h"
-#include <Python.h>
+
 
 void paramCallback(const std_msgs::String::ConstPtr& param_msg) {
 	ROS_INFO("Parameter received: [%s]", param_msg->data.c_str());
 }
 
+void pythonCall() {
+	printf("Calling Python script:\n");
+
+	FILE* file;
+	int argc;
+	char* arg[3];
+
+	argc = 2;
+	arg[0] = "pytest.py";
+	arg[1] = "5";
+	// std::size_t len;
+	wchar_t *argv;
+	std::mbstowcs(argv, *arg, 3);
+	// size_t argv = mbstowcs(*argv, *arg, lenarg);
+
+	Py_SetProgramName(argv[0]);
+	Py_Initialize();
+	PySys_SetArgv(argc,&argv);
+	file = fopen("pytest.py","r");
+	PyRun_SimpleFile(file,"pytest.py");
+	Py_Finalize();
+}
+ 
 // void pythonCall(){
 // 	printf("Calling Python script:\n");
 // 	Py_Initialize();
 // 	PyObject *pName, *pModule, *pDict, *pFunc, *pArgs, *pValue;
-// 	pName = PyString_FromString("pytest"); //convert filename to string
+// 	// pName = PyString_FromString("pytest"); //convert filename to string
+// 	pName = PyBytes_FromString("pytest"); //convert filename to string
 // 	pModule = PyImport_Import(pName); //import file as Python module
 // 	pDict = PyModule_GetDict(pModule); //dictionary for module contents
 // 	pFunc = PyDict_GetItemString(pDict,"print"); // get print method from dict
 // 	// define input args
 // 	pArgs = PyTuple_New(1);
-// 	pValue = PyInt_FromLong(5);
+// 	pValue = PyLong_FromLong(5);
 // 	PyTuple_SetItem(pArgs,0,pValue);
 // 	// call function w/ args
 // 	PyObject *pResult = PyObject_CallObject(pFunc,pArgs);
@@ -37,7 +64,7 @@ void paramCallback(const std_msgs::String::ConstPtr& param_msg) {
 // 		printf("Calling the Python script failed\n");
 
 // 	// handle returned value from Python method
-// 	long result = PyInt_AsLong(pResult);
+// 	long result = PyLong_AsLong(pResult);
 	
 // 	Py_Finalize();// destroy Python interpreter
 	
