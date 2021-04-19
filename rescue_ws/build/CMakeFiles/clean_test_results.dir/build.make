@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/ryan/RESCUE_workspace/rescue_ws/build
 include CMakeFiles/clean_test_results.dir/progress.make
 
 CMakeFiles/clean_test_results:
-	/usr/bin/python3 /opt/ros/noetic/share/catkin/cmake/test/remove_test_results.py /home/ryan/rescue_ws/build/test_results
+	/usr/bin/python3 /opt/ros/noetic/share/catkin/cmake/test/remove_test_results.py /home/ryan/RESCUE_workspacerescue_ws/build/test_results
 
 clean_test_results: CMakeFiles/clean_test_results
 clean_test_results: CMakeFiles/clean_test_results.dir/build.make

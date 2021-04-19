@@ -22,6 +22,9 @@ void co2Callback(const std_msgs::Bool::ConstPtr& co2_flag_msg) {
 	// interpret co2 flag / act accordingly
 }
 
+void videoCallback(const std_msgs::String::ConstPtr& video_data_msg) {
+	ROS_INFO("VIDEO MESSAGE RECEIVED");
+}
 
 int main(int argc, char **argv) {
 
@@ -34,6 +37,9 @@ int main(int argc, char **argv) {
 
 	// subscribe to co2 flag topic
 	ros::Subscriber co2_sub = n.subscribe("co2_flag", 1000, co2Callback);
+
+	// subscribe to video data topic
+	ros::Subscriber video_data_sub = n.subscribe("video_data", 1000, videoCallback);
 
 	ros::Publisher msg_pub = n.advertise<std_msgs::String>("location_command",1000);
 

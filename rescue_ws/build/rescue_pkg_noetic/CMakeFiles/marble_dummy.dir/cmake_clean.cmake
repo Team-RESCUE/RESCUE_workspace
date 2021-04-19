@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/ryan/RESCUE_workspace/rescue_ws/devel/lib/rescue_pkg_noetic/marble_dummy"
-  "/home/ryan/RESCUE_workspace/rescue_ws/devel/lib/rescue_pkg_noetic/marble_dummy.pdb"
+  "../devel/lib/rescue_pkg_noetic/marble_dummy"
+  "../devel/lib/rescue_pkg_noetic/marble_dummy.pdb"
   "CMakeFiles/marble_dummy.dir/src/marble_dummy.cpp.o"
 )
 

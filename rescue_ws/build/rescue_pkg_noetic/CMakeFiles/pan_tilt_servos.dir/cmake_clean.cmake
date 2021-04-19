@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/ryan/RESCUE_workspace/rescue_ws/devel/lib/rescue_pkg_noetic/pan_tilt_servos"
-  "/home/ryan/RESCUE_workspace/rescue_ws/devel/lib/rescue_pkg_noetic/pan_tilt_servos.pdb"
+  "../devel/lib/rescue_pkg_noetic/pan_tilt_servos"
+  "../devel/lib/rescue_pkg_noetic/pan_tilt_servos.pdb"
   "CMakeFiles/pan_tilt_servos.dir/src/pan_tilt_servos.cpp.o"
 )
 

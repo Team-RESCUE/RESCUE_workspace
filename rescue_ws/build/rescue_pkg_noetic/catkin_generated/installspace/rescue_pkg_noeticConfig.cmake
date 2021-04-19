@@ -68,7 +68,7 @@ set(rescue_pkg_noetic_CONFIG_INCLUDED TRUE)
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
   set(rescue_pkg_noetic_SOURCE_PREFIX /home/ryan/RESCUE_workspace/rescue_ws/src/rescue_pkg_noetic)
-  set(rescue_pkg_noetic_DEVEL_PREFIX /home/ryan/RESCUE_workspace/rescue_ws/devel)
+  set(rescue_pkg_noetic_DEVEL_PREFIX ../devel)
   set(rescue_pkg_noetic_INSTALL_PREFIX "")
   set(rescue_pkg_noetic_PREFIX ${rescue_pkg_noetic_DEVEL_PREFIX})
 else()
@@ -185,7 +185,7 @@ foreach(t ${rescue_pkg_noetic_EXPORTED_TARGETS})
   endif()
 endforeach()
 
-set(depends "message_runtime")
+set(depends "message_runtime;roscpp")
 foreach(depend ${depends})
   string(REPLACE " " ";" depend_list ${depend})
   # the package name of the dependency must be kept in a unique variable so that it is not overwritten in recursive calls

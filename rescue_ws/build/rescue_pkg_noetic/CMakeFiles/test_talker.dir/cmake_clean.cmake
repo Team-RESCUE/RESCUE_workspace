@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/ryan/RESCUE_workspace/rescue_ws/devel/lib/rescue_pkg_noetic/test_talker"
-  "/home/ryan/RESCUE_workspace/rescue_ws/devel/lib/rescue_pkg_noetic/test_talker.pdb"
+  "../devel/lib/rescue_pkg_noetic/test_talker"
+  "../devel/lib/rescue_pkg_noetic/test_talker.pdb"
   "CMakeFiles/test_talker.dir/src/test_talker.cpp.o"
 )
 

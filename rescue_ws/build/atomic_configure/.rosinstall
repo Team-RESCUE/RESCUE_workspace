@@ -1,2 +1,2 @@
 - setup-file:
-    local-name: /home/ryan/RESCUE_workspace/rescue_ws/devel/setup.sh
+    local-name: ../devel/setup.sh
