@@ -24,6 +24,8 @@ add_service_files(
    AddTwoInts.srv
 )
 
+catkin_python_setup()
+
 ## Generate added messages and services
 generate_messages(
    DEPENDENCIES

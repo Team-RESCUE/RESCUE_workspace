@@ -35,7 +35,7 @@ void pythonCall() {
 	std::mbstowcs(argv, *arg, 3);
 	// size_t argv = mbstowcs(*argv, *arg, lenarg);
 
-	Py_SetProgramName(argv[0]);
+	Py_SetProgramName(&argv[0]);
 	Py_Initialize();
 	PySys_SetArgv(argc,&argv);
 	file = fopen("pytest.py","r");
