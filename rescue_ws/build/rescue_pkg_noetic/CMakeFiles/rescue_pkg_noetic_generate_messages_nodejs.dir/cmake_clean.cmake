@@ -1,8 +1,3 @@
-file(REMOVE_RECURSE
-  "/home/ryan/RESCUE_workspace/rescue_ws/devel/share/gennodejs/ros/rescue_pkg_noetic/msg/Num.js"
-  "/home/ryan/RESCUE_workspace/rescue_ws/devel/share/gennodejs/ros/rescue_pkg_noetic/srv/AddTwoInts.js"
-  "CMakeFiles/rescue_pkg_noetic_generate_messages_nodejs"
-)
 
 # Per-language clean rules from dependency scanning.
 foreach(lang )

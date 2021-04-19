@@ -1,7 +1,7 @@
 # generated from genmsg/cmake/pkg-genmsg.context.in
 
-messages_str = "/home/ryan/RESCUE_workspace/rescue_ws/src/rescue_pkg_noetic/msg/Num.msg"
-services_str = "/home/ryan/RESCUE_workspace/rescue_ws/src/rescue_pkg_noetic/srv/AddTwoInts.srv"
+messages_str = ""
+services_str = ""
 pkg_name = "rescue_pkg_noetic"
 dependencies_str = "std_msgs;geometry_msgs"
 langs = "gencpp;geneus;genlisp;gennodejs;genpy"

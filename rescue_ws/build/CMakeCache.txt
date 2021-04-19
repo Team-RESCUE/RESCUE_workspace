@@ -24,7 +24,7 @@ BUILD_SHARED_LIBS:BOOL=ON
 CATKIN_BLACKLIST_PACKAGES:STRING=
 
 //catkin devel space
-CATKIN_DEVEL_PREFIX:PATH=/home/ryan/RESCUE_workspace/rescue_ws/devel
+CATKIN_DEVEL_PREFIX:PATH=../devel
 
 //Catkin enable testing
 CATKIN_ENABLE_TESTING:BOOL=ON
@@ -351,6 +351,15 @@ Project_BINARY_DIR:STATIC=/home/ryan/RESCUE_workspace/rescue_ws/build
 
 //Value Computed by CMake
 Project_SOURCE_DIR:STATIC=/home/ryan/RESCUE_workspace/rescue_ws/src
+
+//The directory containing a CMake configuration file for PythonInterp.
+PythonInterp_DIR:PATH=PythonInterp_DIR-NOTFOUND
+
+//The directory containing a CMake configuration file for PythonLibs.
+PythonLibs_DIR:PATH=PythonLibs_DIR-NOTFOUND
+
+//The directory containing a CMake configuration file for Python.
+Python_DIR:PATH=Python_DIR-NOTFOUND
 
 //Path to a library.
 RT_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/librt.so

@@ -38,14 +38,6 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/rescue_pkg_noetic/msg" TYPE FILE FILES "/home/ryan/RESCUE_workspace/rescue_ws/src/rescue_pkg_noetic/msg/Num.msg")
-endif()
-
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/rescue_pkg_noetic/srv" TYPE FILE FILES "/home/ryan/RESCUE_workspace/rescue_ws/src/rescue_pkg_noetic/srv/AddTwoInts.srv")
-endif()
-
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   include("/home/ryan/RESCUE_workspace/rescue_ws/build/rescue_pkg_noetic/catkin_generated/safe_execute_install.cmake")
 endif()
 
@@ -54,31 +46,31 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/home/ryan/RESCUE_workspace/rescue_ws/devel/include/rescue_pkg_noetic")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/home/ryan/RESCUE_workspace/rescue_ws/src/rescue_pkg_noetic/../devel/include/rescue_pkg_noetic")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/roseus/ros" TYPE DIRECTORY FILES "/home/ryan/RESCUE_workspace/rescue_ws/devel/share/roseus/ros/rescue_pkg_noetic")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/roseus/ros" TYPE DIRECTORY FILES "/home/ryan/RESCUE_workspace/rescue_ws/src/rescue_pkg_noetic/../devel/share/roseus/ros/rescue_pkg_noetic")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/common-lisp/ros" TYPE DIRECTORY FILES "/home/ryan/RESCUE_workspace/rescue_ws/devel/share/common-lisp/ros/rescue_pkg_noetic")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/common-lisp/ros" TYPE DIRECTORY FILES "/home/ryan/RESCUE_workspace/rescue_ws/src/rescue_pkg_noetic/../devel/share/common-lisp/ros/rescue_pkg_noetic")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gennodejs/ros" TYPE DIRECTORY FILES "/home/ryan/RESCUE_workspace/rescue_ws/devel/share/gennodejs/ros/rescue_pkg_noetic")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gennodejs/ros" TYPE DIRECTORY FILES "/home/ryan/RESCUE_workspace/rescue_ws/src/rescue_pkg_noetic/../devel/share/gennodejs/ros/rescue_pkg_noetic")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  execute_process(COMMAND "/usr/bin/python3" -m compileall "/home/ryan/RESCUE_workspace/rescue_ws/devel/lib/python3/dist-packages/rescue_pkg_noetic")
+  execute_process(COMMAND "/usr/bin/python3" -m compileall "../devel/lib/python3/dist-packages/rescue_pkg_noetic")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3/dist-packages" TYPE DIRECTORY FILES "/home/ryan/RESCUE_workspace/rescue_ws/devel/lib/python3/dist-packages/rescue_pkg_noetic" REGEX "/\\_\\_init\\_\\_\\.py$" EXCLUDE REGEX "/\\_\\_init\\_\\_\\.pyc$" EXCLUDE)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3/dist-packages" TYPE DIRECTORY FILES "/home/ryan/RESCUE_workspace/rescue_ws/src/rescue_pkg_noetic/../devel/lib/python3/dist-packages/rescue_pkg_noetic" REGEX "/\\_\\_init\\_\\_\\.py$" EXCLUDE REGEX "/\\_\\_init\\_\\_\\.pyc$" EXCLUDE)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3/dist-packages" TYPE DIRECTORY FILES "/home/ryan/RESCUE_workspace/rescue_ws/devel/lib/python3/dist-packages/rescue_pkg_noetic" FILES_MATCHING REGEX "/home/ryan/RESCUE_workspace/rescue_ws/devel/lib/python3/dist-packages/rescue_pkg_noetic/.+/__init__.pyc?$")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3/dist-packages" TYPE DIRECTORY FILES "/home/ryan/RESCUE_workspace/rescue_ws/src/rescue_pkg_noetic/../devel/lib/python3/dist-packages/rescue_pkg_noetic" FILES_MATCHING REGEX "../devel/lib/python3/dist-packages/rescue_pkg_noetic/.+/__init__.pyc?$")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
