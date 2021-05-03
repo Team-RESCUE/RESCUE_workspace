@@ -1,5 +1,7 @@
 # RESCUE_workspace
 ROS workspace containing the RESCUE team's custom-built ROS package, `rescue_pkg`
+## NOTICE: This workspace is now out of use. See [here](https://github.com/Team-RESCUE/RESCUE_ws_python) for the updated Python workspace (may require access permissions)
+
 
 ## ROS Nodes & Topics
 
